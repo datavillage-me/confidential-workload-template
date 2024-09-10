@@ -34,7 +34,7 @@ def event_processor(evt: dict):
         # use the CHECK_DATA_QUALITY event processor dedicated function
         logger.info(f"Use the check data quality event processor")
         check_data_quality_contracts_event_processor(evt)
-    elif evt_type == "CHECK_COMMON__DEMO_CUSTOMERS":
+    elif evt_type == "CHECK_COMMON_DEMO_CUSTOMERS":
         # use the CHECK_COMMON__DEMO_CUSTOMERS event processor dedicated function
         logger.info(f"Use the check common customers demo event processor")
         check_common_customers_demo_event_processor(evt)

@@ -25,7 +25,7 @@ class Test(unittest.TestCase):
         Try the process  without going through the redis queue
         """
         test_event = {
-            'type': 'CHECK_COMMON__DEMO_CUSTOMERS'
+            'type': 'CHECK_COMMON_DEMO_CUSTOMERS'
         }
         
         process.event_processor(test_event)
