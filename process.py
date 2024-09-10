@@ -126,4 +126,4 @@ def check_common_customers_demo_event_processor(evt: dict):
         else:
             logger.error(f"No data contract available for collaboration_space_id: {collaboration_space_id}")
     except Exception as e:
-        logger.error(e)
+        logger.error(e) 
