@@ -10,15 +10,15 @@ import logging
 import process
 
 class Test(unittest.TestCase):
-    # def test_data_quality_check(self):
-    #     """
-    #     Try the process to check data quality
-    #     """
-    #     test_event = {
-    #         'type': 'CHECK_DATA_QUALITY'
-    #     }
+    def test_data_quality_check(self):
+        """
+        Try the process to check data quality
+        """
+        test_event = {
+            'type': 'CHECK_DATA_QUALITY'
+        }
 
-    #     process.event_processor(test_event)
+        process.event_processor(test_event)
     
     def test_common_customers_demo(self):
         """
