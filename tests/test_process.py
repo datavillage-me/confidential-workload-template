@@ -12,7 +12,7 @@ import process
 class Test(unittest.TestCase):
     # def test_data_quality_check(self):
     #     """
-    #     Try the process  without going through the redis queue
+    #     Try the process to check data quality
     #     """
     #     test_event = {
     #         'type': 'CHECK_DATA_QUALITY'
@@ -29,42 +29,3 @@ class Test(unittest.TestCase):
         }
         
         process.event_processor(test_event)
-
-    # def test_process_queue_once(self):
-    #     """
-    #     Try the process by sending an event to the queue and consume exactly one event.
-    #     """
-
-    #     test_event = {
-    #         'userIds': [os.environ["TEST_USER"]],
-    #         'trigger': 'full',
-    #         # 'jobId': None,
-    #     }
-
-    #     r = RedisQueue()
-
-    #     # fake the publishing of an event
-    #     r.redis.publish("dv", json.dumps(test_event))
-
-    #     # wait for exactly one event and process it
-    #     event = r.listenOnce()
-    #     process.event_processor(event)
-
-    # def test_process_queue_loop(self):
-    #     """
-    #     Try the process by sending an event to the queue and let the queue loop in wait.
-    #     """
-
-    #     test_event = {
-    #         'userIds': [os.environ["TEST_USER"]],
-    #         'trigger': 'full',
-    #         # 'jobId': None,
-    #     }
-
-    #     r = RedisQueue()
-
-    #     # fake the publishing of an event
-    #     r.redis.publish("dv", json.dumps(test_event))
-
-    #     # let the queue wait for events and dispatch them to the process function
-    #     r.listen(process.event_processor, 2)

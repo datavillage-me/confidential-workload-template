@@ -1,6 +1,6 @@
 """
 Example of a confidential workload processing data from 2 data owners and sending the results to 1 data user.
-The confidential workload handles 3 events: one to perform a collaborative analysis example, one to perform a confidential AI (training the AI ​​model), and one to trigger the data owners' data quality checks.
+The confidential workload handles 2 events: one to perform a confidential analysis example, and one to trigger the data holders' data quality checks.
 """
 
 import logging
@@ -81,8 +81,10 @@ def check_common_customers_demo_event_processor(evt: dict):
             #Create duckdb in memory db for optimisation
             query=f"SELECT * FROM {data_contracts[0].connector.get_duckdb_source()}"
             res=con.sql("CREATE OR REPLACE TABLE customers_list_1 AS "+query) 
+            audit_log(f"Read data from: {data_contracts[0].data_descriptor_id}.",LogLevel.INFO)
             query=f"SELECT * FROM {data_contracts[1].connector.get_duckdb_source()}"
             res=con.sql("CREATE OR REPLACE TABLE customers_list_2 AS "+query) 
+            audit_log(f"Read data from: {data_contracts[1].data_descriptor_id}.",LogLevel.INFO)
             #Common customers by name
             #Create duckdb query
             query="SELECT COUNT(*) as total FROM customers_list_1,customers_list_2 WHERE (customers_list_1.customer_name=customers_list_2.customer_name)"
