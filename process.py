@@ -1,5 +1,5 @@
 """
-Example of a confidential workload processing data from 2 data owners and sending the results to 1 data user.
+Example of a confidential workload processing data from 2 data holders and sending the results to 1 data user.
 The confidential workload handles 2 events: one to perform a confidential analysis example, and one to trigger the data holders' data quality checks.
 """
 
