@@ -1,4 +1,4 @@
-# Template for a process to be deployed in the data cage
+# Template for confidential workload
 
 This is a sample project with a representative set of resources to deploy a confidential workload.
 
