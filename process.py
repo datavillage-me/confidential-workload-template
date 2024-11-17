@@ -90,21 +90,18 @@ def check_common_customers_demo_event_processor(evt: dict):
             query="SELECT COUNT(*) as total FROM customers_list_1,customers_list_2 WHERE (customers_list_1.customer_name=customers_list_2.customer_name)"
             df = con.sql(query).df()
             common_customers_by_name=df["total"].to_string(index=False)
-            logger.info(f"|    Common customers by name: {common_customers_by_name}                     |")
             
             #Common customers by email
             #Create duckdb query
             query="SELECT COUNT(*) as total FROM customers_list_1,customers_list_2 WHERE (customers_list_1.customer_email=customers_list_2.customer_email)"
             df = con.sql(query).df()
             common_customers_by_email=df["total"].to_string(index=False)
-            logger.info(f"|    Common customers by email: {common_customers_by_email}                    |")
-
+           
             #Common customers by company
             #Create duckdb query
             query="SELECT COUNT(*) as total FROM customers_list_1,customers_list_2 WHERE (customers_list_1.customer_company=customers_list_2.customer_company)"
             df = con.sql(query).df()
             common_customers_by_company=df["total"].to_string(index=False)
-            logger.info(f"|    Common customers by company: {common_customers_by_company}                  |")
             logger.info(f"|                                                       |")
             
             #Remove in memory database 
