@@ -2,7 +2,7 @@
 Unit test.
 """
 
-# Read env variables from a local .env file, to fake the variables normally provided by the cage container
+# Read env variables from a local .env file, to fake the variables normally provided by the confidential environment
 import dotenv
 dotenv.load_dotenv('.env')
 import unittest
