@@ -1,6 +1,6 @@
 #take dv-utils either from github or from pypi
 #git+https://github.com/datavillage-me/dv-utils@main#egg=dv-utils
-dv-utils>=1.0.1
+dv-utils>=1.2.1
 pandas
 openpyxl
 duckdb==1.0.0
