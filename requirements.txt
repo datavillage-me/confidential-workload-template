@@ -3,4 +3,4 @@
 dv-utils>=1.2.1
 pandas
 openpyxl
-duckdb==1.0.0
+duckdb==1.1.2
